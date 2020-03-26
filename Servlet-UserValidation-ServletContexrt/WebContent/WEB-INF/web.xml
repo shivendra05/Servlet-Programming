@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>Servlet-UserValidation-ServletContexrt</display-name>
+	<welcome-file-list>
+		<welcome-file>home.html</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:oracle:thin:@localhost:1521:orcl</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>system</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>shiv</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>UserSignIn</servlet-name>
+		<servlet-class>facelookCopyServeltContext.UserLogin</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UserSignUp</servlet-name>
+		<servlet-class>facelookCopyServeltContext.UserRegistration</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UserSignIn</servlet-name>
+		<url-pattern>/loginUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UserSignUp</servlet-name>
+		<url-pattern>/regsitration</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
